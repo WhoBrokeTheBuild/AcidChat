@@ -12,11 +12,12 @@ OBJ_DIR = $(BUILD_DIR)/obj
 
 CXXFLAGS += -std=c++11 -I include/ -Wall -pedantic -g
 LDFLAGS  += -L lib/
-LDLIBS   += 
+LDLIBS   +=
 
-all: ChatServer GTKClient
+all: ChatServer GTKClient CLIClient
 
-clean: clean-ChatServer clean-GTKClient
+clean: clean-ChatServer clean-GTKClient clean-CLIClient
 
 include ChatServer/*.mk
+include CLIClient/*.mk
 include GTKClient/*.mk
